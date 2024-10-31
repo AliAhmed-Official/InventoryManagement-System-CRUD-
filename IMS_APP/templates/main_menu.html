@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Menu</title>
+        <link rel="icon" href="{% static 'images/stock_title_icon.ico' %}">
+        <link rel="stylesheet" href="{% static 'css/main_menu.css' %}">
+</head>
+
+<body style="background-color:#1F2344;">
+        <div id="main_menu" style="background-color: #2C315B;">
+                <a href="{% url 'logout_page' %}"><button id="logout">Logout</button></a>
+                <h1 id="h1_main_menu">MAIN MENU</h1>
+                <h2 id="h2_date">{{curr_date}}<br>{{curr_time}}</h2>
+        </div>
+
+        <div id="body_frame" style="background-color: #2C315B;">
+                <h1 id="h1_IMS">INVENTORY MANAGEMENT SYSTEM</h1>
+                <a href="{% url 'employee_page' %}">
+                        <button id="emp_btn"><img src="{% static 'images/emp_btn.png' %}" id="emp_img"><strong
+                                        id="emp_txt">EMPLOYEES</strong></button>
+                </a>
+
+                <a href="{% url 'supplier_page' %}">
+                        <button id="sup_btn"><img src="{% static 'images/sup_btn.png' %}" id="sup_img"><strong
+                                        id="sup_txt">SUPPLIERS</strong></button>
+                </a>
+
+                <a href="{% url 'category_page' %}">
+                        <button id="cat_btn"><img src="{% static 'images/cat_btn.png' %}" id="cat_img"><strong
+                                        id="cat_txt">CATEGORIES</strong></button>
+                </a>
+
+                <a href="{% url 'product_page' %}"><button id="pro_btn"><img src="{% static 'images/pro_btn.png' %}"
+                                        id="pro_img"><strong id="pro_txt">PRODUCTS</strong></button>
+                </a>
+
+                <a href="{% url 'sales_page' %}"><button id="sal_btn"><img src="{% static 'images/sales_btn.png' %}"
+                                        id="sal_img"><strong id="sal_txt">SALES</strong></button>
+                </a>
+
+
+                
+        </div>
+
+        <div id="footer">
+                <span>IMS-Inventory Management System | Developed by Ali Ahmed<br>For any Technical issue..
+                        Please Contact +923222506206</span>
+        </div>
+</body>
+
+</html>

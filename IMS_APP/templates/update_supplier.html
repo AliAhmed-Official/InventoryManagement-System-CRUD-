@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Supplier</title>
+    <link rel="icon" href="{% static 'images/stock_title_icon.ico' %}/">
+    <link rel="stylesheet" href="{% static 'bjp/css/bootstrap.css' %}">
+    <style>
+        #id_Description {
+            height: 140px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #21252b;">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-8 offset-2">
+                <h4 class="text-center alert alert-info"><strong>Update Supplier
+                        Information</strong></h4>
+                <form action="" method="POST" style="color: white; font-size: 25px;">
+                    {% csrf_token %}
+                    {{form_upd}}
+                    <input type="submit" value="Update" class="btn btn-success">
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{% static 'bjp/js/jquery.js' %}"></script>
+    <script src="{% static 'bjp/js/popper.js' %}"></script>
+    <script src="{% static 'bjp/js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>

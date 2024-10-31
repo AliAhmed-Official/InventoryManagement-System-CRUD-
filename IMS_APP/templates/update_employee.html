@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+    <link rel="icon" href="{% static 'images/stock_title_icon.ico' %}/">
+    <link rel="stylesheet" href="{% static 'bjp/css/bootstrap.css' %}">
+    <style>
+        #id_Description {
+            height: 140px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #21252b;">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container mt-6" >
+        <h4 style="font-size: 28px;" class="text-center alert alert-info">Update Employee Information</h4><br>
+        
+        <form method="POST" style="color: white; font-size: 22px;">
+            {% csrf_token %}
+            <div class="row">
+                    <div class="col-sm-4">
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Emp Name:</label>
+                        <input type="text" name="Empname" class="form-control" value="{{name}}">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Contact:</label>
+                        <input type="text" name="Empcontact" class="form-control" value="{{contact}}">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Email:</label>
+                        <input type="email" name="Empemail" class="form-control" value="{{email}}">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Address:</label>
+                        <textarea name="Empaddress" cols="30" rows="5" class="form-control" id="myTextarea"></textarea>
+                    </div>
+                    <div class="col-sm-4">
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Gender:</label>
+                        <select name="Empgender" class="form-control" id="Empgender">
+                            <option value="Select">Select<option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">D.B.O</label>
+                        <input type="date" name="Empdbo" class="form-control" id="emp-dbo" value="{{dob}}">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Salary</label>
+                        <input type="number" name="Empsalary" class="form-control" value="{{salary}}">
+                        <br>
+                    </div>
+                    <div class="col-sm-4">
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Hiredate</label>
+                        <input type="date" name="Emphiredate" class="form-control" id="emp-hire" value="{{hire}}">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">UserType:</label>
+                        <select name="Emptype" class="form-control" id="Emptype">
+                            <option value="Select">Select</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Retailer">Retailer</option>
+                        </select>
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Password:</label>
+                        <input type="text" name="Emppass" class="form-control" value="{{pass_emp}}">
+                        
+                    </div>
+
+                    <input type="submit" class="btn btn-success" value="Update" style="width: 100px; font-size: 19px; font-weight: bold; position: relative; left: 45%;">
+                    
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <script>
+        document.getElementById("myTextarea").value = "{{address}}";
+    </script>
+
+    <script>
+        document.getElementById("Empgender").value = "{{gender}}";
+    </script>
+
+    <script>
+        document.getElementById("Emptype").value = "{{user}}";
+    </script>
+
+
+    
+</body>
+
+
+</html>

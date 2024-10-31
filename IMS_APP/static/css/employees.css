@@ -1,0 +1,362 @@
+body {
+    background-color: #21252b;
+}
+
+#search_menu {
+    position: relative;
+    top: 20px;
+    width: 550px;
+    height: 50px;
+    margin: auto;
+    border: 2px solid #22d3fe;
+}
+
+#search_by {
+    width: 110px;
+    height: 30px;
+    font-size: 18px;
+    position: relative;
+    bottom: 3px;
+    left: 50px;
+}
+
+#search_txt {
+    position: relative;
+    bottom: 5px;
+    height: 40px;
+    left: 80px;
+    width: 300px;
+}
+
+#search_btn {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    top: 4px;
+    cursor: pointer;
+}
+
+#search_icon {
+    position: relative;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+}
+
+#title {
+    position: relative;
+    top: 50px;
+    background-color: #22d3fe;
+    border: double;
+    height: 50px;
+    width: 1100px;
+    margin: auto;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    position: relative;
+    bottom: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#forms {
+    position: relative;
+    top: 100px;
+    height: 10px;
+    width: 1100px;
+    margin: auto;
+}
+
+#label_1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_1 {
+    position: relative;
+    bottom: 5px;
+    left: 15px;
+    height: 25px;
+    text-align: center;
+    font-size: 18px;
+    width: 170px;
+}
+
+#label_2 {
+    position: relative;
+    top: 23px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_2 {
+    position: relative;
+    top: 20px;
+    height: 25px;
+    bottom: 5px;
+    left: 30px;
+}
+
+#label_3 {
+    position: relative;
+    top: 46px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_3 {
+    position: relative;
+    top: 43px;
+    height: 25px;
+    bottom: 5px;
+    left: 33px;
+}
+
+#label_4 {
+    position: relative;
+    bottom: 2px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_4 {
+    position: relative;
+    top: 70px;
+    left: 3px;
+}
+
+#label_5 {
+    position: relative;
+    bottom: 175px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    right: 10px;
+}
+
+#input_5 {
+    position: relative;
+    bottom: 177px;
+    left: 5px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_6 {
+    position: relative;
+    bottom: 115px;
+    right: 300px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_6 {
+    position: relative;
+    bottom: 120px;
+    right: 270px;
+    height: 25px;
+    width: 195px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_7 {
+    position: relative;
+    bottom: 93px;
+    left: 333px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_7 {
+    position: relative;
+    bottom: 97px;
+    left: 361px;
+    height: 25px;
+    width: 192px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_8 {
+    position: relative;
+    bottom: 240px;
+    left: 700px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_8 {
+    position: relative;
+    bottom: 243px;
+    left: 720px;
+    height: 25px;
+    width: 192px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_9 {
+    position: relative;
+    bottom: 216px;
+    left: 700px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_9 {
+    position: relative;
+    bottom: 218px;
+    left: 710px;
+    height: 25px;
+    width: 192px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_10 {
+    position: relative;
+    bottom: 195px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    left: 702px;
+}
+
+#input_10 {
+    position: relative;
+    bottom: 197px;
+    left: 752px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_11 {
+    position: relative;
+    bottom: 135px;
+    left: 173px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#input_11 {
+    position: relative;
+    bottom: 139px;
+    left: 193px;
+    height: 25px;
+    width: 192px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#add {
+    background-color: #2196f3;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+    position: relative;
+    left: 425px;
+    bottom: 70px;
+    color: white;
+    cursor: pointer;
+}
+
+#add:hover {
+    background-color: #D3D3D3;
+    color: black;
+}
+
+#update {
+    background-color: darkgreen;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+    position: relative;
+    left: 445px;
+    bottom: 70px;
+    color: white;
+    cursor: pointer;
+}
+
+#update:hover {
+    background-color: #D3D3D3;
+    color: black;
+}
+
+#delete {
+    background-color: red;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+    position: relative;
+    left: 465px;
+    bottom: 70px;
+    color: white;
+    cursor: pointer;
+}
+
+#delete:hover {
+    background-color: #D3D3D3;
+    color: black;
+}
+
+#clear {
+    background-color: #607d8b;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+    position: relative;
+    left: 485px;
+    bottom: 70px;
+    color: white;
+    cursor: pointer;
+}
+
+#clear:hover {
+    background-color: #D3D3D3;
+    color: black;
+}
+
+#data_div3 {
+    background-color: white;
+    border: solid;
+    border-width: 5px;
+    border-color: #828482;
+    position: relative;
+    width: 1330px;
+    height: 205px;
+    top: 410px;
+    overflow: auto;
+    right: 2px;
+}

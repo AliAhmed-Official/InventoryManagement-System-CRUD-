@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Bill</title>
+    <link rel="icon" href="{% static 'images/stock_title_icon.ico' %}">
+    <link rel="stylesheet" href="{% static 'bjp/css/bootstrap.css' %}">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+</head>
+
+<body">
+    <div id="content">
+    <div class="container">
+        <div class="row">  
+        </div><br><br><br>
+        <div class="row">
+            <div class="col-sm-14" style="text-align: center;">
+                <div style="margin: auto; width: 40%; box-shadow: 0 0 9px 7px #00000014; padding: 30px;">
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td><img src="{% static 'images/stock_title_icon.ico' %}" style="width: 50px;"></td>
+                                <td><h2 class="mt-0" style="margin-top:0; display: block; font-size: 35px; font-weight: 500; line-height: 1.1; color:#474d5d; text-align: left; position: relative; left: 17px;">Details</h2></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="height: 1px; margin: 0 auto 20px; width: 15%; border: 2px #006535; border-style: dashed;"></div>
+                    <div><br>
+                        <p style="text-align: center;"><h5 style="color: #474d5d;">UIT UNIVERSITY</h5></p>
+                        {% for i in billd %}
+                        <table style="background-color: transparent; text-shadow: 1px 1px 1px rgb(0 0 0 / 4%);  border-color: gray; color: #474d5d; font-family: 'poppins', sans-serif; font-size: 15px; width: 100%;">
+                            <tbody>
+                                <hr>
+                                <tr>
+                                    <td style="text-align: left;"><strong>Bill No.</strong></td>
+                                    <td style="text-align: right;"><strong>{{i.0}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="background-color: transparent; text-shadow: 1px 1px 1px rgb(0 0 0 / 4%);  border-color: gray; color: #474d5d; font-family: 'poppins', sans-serif; font-size: 15px; width: 100%;">
+                            <tbody>
+                                <hr>
+                                <tr>
+                                    <td style="text-align: left;"><strong>Date</strong></td>
+                                    <td style="text-align: right;"><strong>{{i.1}}</strong></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% for j in cust %}
+                        <table style="background-color: transparent; text-shadow: 1px 1px 1px rgb(0 0 0 / 4%);  border-color: gray; color: #474d5d; font-family: 'poppins', sans-serif; font-size: 15px; width: 100%;">
+                            <tbody>
+                                <hr>
+                                <tr>
+                                    <td style="text-align: left;"><strong>Customer Name</strong></td>
+                                    <td style="text-align: right;"><strong>{{j.0}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="background-color: transparent; text-shadow: 1px 1px 1px rgb(0 0 0 / 4%);  border-color: gray; color: #474d5d; font-family: 'poppins', sans-serif; font-size: 15px; width: 100%;">
+                            <tbody>
+                                <hr>
+                                <tr>
+                                    <td style="text-align: left;"><strong>Contact</strong></td>
+                                    <td style="text-align: right;"><strong>{{j.1}}</strong></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <br><br>
+                        <div style="height: 1px; margin: 0 auto 20px; width: 15%; border: 2px #006535; border-style: dashed;"></div>
+                        <br>
+                        {% for k in selected_p %}
+                        <table style="background-color: transparent; text-shadow: 1px 1px 1px rgb(0 0 0 / 4%);  border-color: gray; color: #474d5d; font-family: 'poppins', sans-serif; font-size: 15px; width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left;"><strong style="font-size: x-large;">{{k.0}}</strong><br><strong>{{k.1}} {{k.2}}</strong><br><strong><i>${{k.3}}</i></strong></td>
+                                    <td style="text-align: right;"><br><h6><strong>${{k.4}}</strong></h6></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        {% endfor %}
+                        <div style="text-align: left;">
+                            <p><h5 style="color: #474d5d;"><strong>Grand Total: ${{total}}</strong></h5></p>
+                        </div>
+                        <br>
+                            <button id="btn-print" style="border: solid 2px; border-color: #006535; width: 400px; margin: auto; background-color: white; position: relative; right: 5px;">
+                                <div >
+                                    <span>Print</span><img src="{% static 'images/icons8-printer-48.png' %}" alt="" style="width: 20px; position: relative; bottom: 1px; left: 2px;">
+                                </div>
+                            </button>
+                    </div>
+                </div><br><br>
+                <div>
+                    <a href="{% url 'customer_page' %}" class="btn btn-success">Make another order</a>
+                </div><br>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="{% static 'bjp/js/jquery.js' %}"></script>
+    <script src="{% static 'bjp/js/custom.js' %}"></script>
+    <script src="{% static 'bjp/js/popper.js' %}"></script>
+    <script src="{% static 'bjp/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="{% static 'bjp/css/bootstrap.css' %}">
+    <link rel="icon" href="{% static 'images/stock_title_icon.ico' %}">
+</head>
+
+<body style="background-color: #1F2344;">
+    <a href="{% url 'main_menu_page' %}" class="btn btn-danger" style="position: relative; top: 50px; left: 5px;">Back to Main Menu</a>
+    <div
+        style="background-color: #22d3fe; margin: auto; width: 1000px; height: 60px; border: double; text-align: center; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">
+        <h1><strong>Manage Employee Details</strong></h1>
+    </div><br>
+
+    <div class="container mt-6" >
+        <h4 style="font-size: 28px;" class="text-center alert alert-info">Add New Employee</h4><br>
+        <form method="POST" style="color: white; font-size: 22px;">
+            {% csrf_token %}
+            <div class="row">
+                    <div class="col-sm-4">
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Emp Name:</label>
+                        <input type="text" name="Empname" class="form-control">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Contact:</label>
+                        <input type="text" name="Empcontact" class="form-control">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Email:</label>
+                        <input type="email" name="Empemail" class="form-control">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Address:</label>
+                        <textarea name="Empaddress" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="col-sm-4">
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Gender:</label>
+                        <select name="Empgender" class="form-control">
+                            <option value="Select">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">D.B.O</label>
+                        <input type="date" name="Empdbo" class="form-control" id="emp-dbo">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Salary</label>
+                        <input type="number" name="Empsalary" class="form-control">
+                        <br>
+                    </div>
+                    <div class="col-sm-4">
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Hiredate</label>
+                        <input type="date" name="Emphiredate" class="form-control" id="emp-hire">
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">UserType:</label>
+                        <select name="Emptype" class="form-control">
+                            <option value="Select">Select</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Retailer">Retailer</option>
+                        </select>
+                        <br>
+                        <label style="color: white; font-size: 22px; cursor: default; box-sizing: border-box; display: inline-block;">Password:</label>
+                        <input type="password" name="Emppass" class="form-control"><br>
+                        <img src="{% static 'images/cat-removebg-preview.png' %}" style="width: 330px;">
+                    </div>
+                    
+                    <input type="submit" class="btn btn-success" value="Add" style="width: 100px; font-size: 19px; font-weight: bold; position: relative; left: 45%;">
+                    
+            </div>
+        </form>
+
+    </div>
+    
+    <div class="container mt-6" style="position: relative; top: 50px;">
+        <h4 style="font-size: 28px;" class="text-center alert alert-info">Show Employee Information</h4>
+        {% if emp %}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">EmpID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">D.O.B</th>
+                    <th scope="col">Hiredate</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in emp %}
+                <tr>
+                    <td>{{i.0}}</td>
+                    <td>{{i.1}}</td>
+                    <td>{{i.2}}</td>
+                    <td>{{i.3}}</td>
+                    <td>{{i.4}}</td>
+                    <td>{{i.5}}</td>
+                    <td>{{i.6}}</td>
+                    <td>{{i.7}}</td>
+                    <td>{{i.8}}</td>
+                    <td>
+                        <a href="{% url 'update_emp' i.0 %}" class="btn btn-warning btn-sm" style="position: relative; left: 3px;">Update</a>
+                        <form action="{% url 'delete_emp' i.0 %}" method="post" class="d-inline">
+                            {% csrf_token %}
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h5 class="text-center alert alert-warning">No Record</h5>
+        {% endif %}
+    </div>
+
+
+    <script src="{% static 'bjp/js/jquery.js' %}"></script>
+    <script src="{% static 'bjp/js/popper.js' %}"></script>
+    <script src="{% static 'bjp/js/bootstrap.js' %}"></script>
+    
+    
+</body>
+
+</html>
